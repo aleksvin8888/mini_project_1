@@ -1,5 +1,5 @@
 {
-    "BACKEND_RDS_URL": "http://13.38.129.203:8000/test_connection/",
-    "BACKEND_REDIS_URL": "http://13.38.129.203:8001/test_connection/"
+    "BACKEND_RDS_URL": "https://rds-mini-project.go.vn.ua/test_connection/",
+    "BACKEND_REDIS_URL": "https://redis-mini-project.go.vn.ua/test_connection/"
   }
   
