@@ -28,3 +28,14 @@ jobs:
           docker-compose down
           docker-compose up -d --build
           EOF
+
+      - name: Deploy Frontend to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "eu-west-3"
+          S3_BUCKET: "aleksvin8888-mini-project-frontend-s3-v1"
+
+        run: |
+          aws s3 sync ./frontend/templates s3://$S3_BUCKET --delete
+          aws s3 cp ./frontend/config.json s3://$S3_BUCKET/config.json

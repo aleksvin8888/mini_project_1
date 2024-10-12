@@ -1,14 +1,4 @@
 services:
-  frontend:
-    build: ./frontend
-    ports:
-      - "80:80"
-    depends_on:
-      - backend_rds
-      - backend_redis
-    volumes:
-      - ./frontend/templates:/usr/share/nginx/html
-      - ./frontend/config.json:/usr/share/nginx/html/config.json
 
   backend_rds:
     build: ./backend_rds
